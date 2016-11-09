@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="DemoMetup.MenuPage">
+  <MasterDetailPage.Master>
+    <ContentPage Title= "Agenda"  >
+      <StackLayout Orientation="Vertical">
+        <Label Text="Agenda" Font="Large" BackgroundColor="#81F79F"/>
+
+        <Entry x:Name="buscar" TextChanged="busqueda" Placeholder="Cellphone or Contacto..." FontSize="15" PlaceholderColor="Gray"/>
+
+        <Button Text="Update List..." BorderColor="#FE2E64" Clicked="leer" />
+
+        <ListView x:Name="lista"  BackgroundColor="#FA8258" ItemSelected="selecciona" />
+      </StackLayout>
+    </ContentPage>
+
+  </MasterDetailPage.Master>
+
+  <MasterDetailPage.Detail>
+    <ContentPage  Title="Contacto">
+      <StackLayout Orientation="Vertical">
+        <Label Text="Contacto" Font="Large" BackgroundColor="#81F79F"/>
+        <Grid VerticalOptions="Start" HorizontalOptions="Center">
+
+          <Entry x:Name="nombre1" BackgroundColor="#58ACFA" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0" Placeholder="Name..." FontSize="15" PlaceholderColor="Gray" HorizontalTextAlignment ="Center"/>
+          <Entry x:Name="apellido1" BackgroundColor="#58ACFA" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" Placeholder="Lastname..." FontSize="15" PlaceholderColor="Gray" HorizontalTextAlignment ="Center"/>
+          <Entry x:Name="telefono1" BackgroundColor="#58ACFA" Grid.ColumnSpan="2" Grid.Row="3" Grid.Column="0" Placeholder="Cellphone..." FontSize="15" PlaceholderColor="Gray" HorizontalTextAlignment ="Center"/>
+          <Button Text="Clear..."  BorderColor="#FE2E64" Grid.Row="4" Grid.Column="0" Clicked="limpiar"/>
+          <Button Text="Update..."  BorderColor="#FE2E64" Grid.Row="5" Grid.Column="1" Clicked="actualiza"/>
+          <Button Text="Save..."  BorderColor="#FE2E64" Grid.Row="4" Grid.Column="1"  Clicked="inserta"/>
+          <Button Text="Delete..."  BorderColor="#FE2E64" Grid.Row="5" Grid.Column="0"  Clicked="borrar"/>
+        </Grid>
+      </StackLayout>
+    </ContentPage>
+
+  </MasterDetailPage.Detail>
+</MasterDetailPage>
